@@ -122,7 +122,7 @@ const FullScreenNav = () => {
                     loop
                     muted
                   >
-                    <source src="/videos/mv.mp4" type="video/mp4" />
+                    <source src={`${import.meta.env.BASE_URL}videos/mv.mp4`} type="video/mp4" />
                   </video>
 
                   <h4 className="whitespace-nowrap font-[font2] lg:text-[6vw] text-5xl text-center lg:leading-[0.8] lg:pt-8 pt-3 uppercase">
@@ -134,7 +134,7 @@ const FullScreenNav = () => {
                     loop
                     muted
                   >
-                    <source src="/videos/rv.mp4" type="video/mp4" />
+                    <source src={`${import.meta.env.BASE_URL}videos/rv.mp4`} type="video/mp4" />
                   </video>
                 </div>
 
@@ -148,7 +148,7 @@ const FullScreenNav = () => {
                     loop
                     muted
                   >
-                    <source src="/videos/mv.mp4" type="video/mp4" />
+                    <source src={`${import.meta.env.BASE_URL}videos/mv.mp4`} type="video/mp4" />
                   </video>
 
                   <h4 className="whitespace-nowrap font-[font2] lg:text-[6vw] text-5xl text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase">
@@ -160,7 +160,7 @@ const FullScreenNav = () => {
                     loop
                     muted
                   >
-                    <source src="/videos/rv.mp4" type="video/mp4" />
+                    <source src={`${import.meta.env.BASE_URL}videos/rv.mp4`} type="video/mp4" />
                   </video>
                 </div>
               </div>
@@ -187,7 +187,7 @@ const FullScreenNav = () => {
                     loop
                     muted
                   >
-                    <source src="/videos/mv.mp4" type="video/mp4" />
+                    <source src={`${import.meta.env.BASE_URL}videos/mv.mp4`} type="video/mp4" />
                   </video>
 
                   <h4 className="whitespace-nowrap font-[font2] lg:text-[6vw] text-5xl text-center lg:leading-[0.8] lg:pt-8 pt-3 uppercase">
@@ -199,7 +199,7 @@ const FullScreenNav = () => {
                     loop
                     muted
                   >
-                    <source src="/videos/rv.mp4" type="video/mp4" />
+                    <source src={`${import.meta.env.BASE_URL}videos/rv.mp4`} type="video/mp4" />
                   </video>
                 </div>
 
@@ -213,7 +213,7 @@ const FullScreenNav = () => {
                     loop
                     muted
                   >
-                    <source src="/videos/mv.mp4" type="video/mp4" />
+                    <source src={`${import.meta.env.BASE_URL}videos/mv.mp4`} type="video/mp4" />
                   </video>
 
                   <h4 className="whitespace-nowrap font-[font2] lg:text-[6vw] text-5xl text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase">
@@ -225,14 +225,12 @@ const FullScreenNav = () => {
                     loop
                     muted
                   >
-                    <source src="/videos/rv.mp4" type="video/mp4" />
+                    <source src={`${import.meta.env.BASE_URL}videos/rv.mp4`} type="video/mp4" />
                   </video>
                 </div>
               </div>
             </div>
           </Link>
-
-
 
           <Link
             to="/aboutus"
@@ -254,7 +252,7 @@ const FullScreenNav = () => {
                     loop
                     muted
                   >
-                    <source src="/videos/mv.mp4" type="video/mp4" />
+                    <source src={`${import.meta.env.BASE_URL}videos/mv.mp4`} type="video/mp4" />
                   </video>
 
                   <h4 className="whitespace-nowrap font-[font2] lg:text-[6vw] text-5xl  text-center lg:leading-[0.8] lg:pt-8 pt-3 uppercase">
@@ -266,7 +264,7 @@ const FullScreenNav = () => {
                     loop
                     muted
                   >
-                    <source src="/videos/rv.mp4" type="video/mp4" />
+                    <source src={`${import.meta.env.BASE_URL}videos/rv.mp4`} type="video/mp4" />
                   </video>
                 </div>
                 <div className="moveX flex items-center">
@@ -279,7 +277,7 @@ const FullScreenNav = () => {
                     loop
                     muted
                   >
-                    <source src="/videos/mv.mp4" type="video/mp4" />
+                    <source src={`${import.meta.env.BASE_URL}videos/mv.mp4`} type="video/mp4" />
                   </video>
                   <h4 className="whitespace-nowrap font-[font2] lg:text-[6vw] text-5xl  text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase">
                     TIMES OF INDIA
@@ -290,7 +288,7 @@ const FullScreenNav = () => {
                     loop
                     muted
                   >
-                    <source src="/videos/rv.mp4" type="video/mp4" />
+                    <source src={`${import.meta.env.BASE_URL}videos/rv.mp4`} type="video/mp4" />
                   </video>
                 </div>
               </div>

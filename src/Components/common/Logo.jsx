@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Logo = ({ onClick }) => {
   return (
     <Link to="/" onClick={onClick}>
-      <img src="/logo.png" alt="UNFT Logo" className="w-full cursor-pointer" />
+      <img src={`${import.meta.env.BASE_URL}logo.png`} alt="UNFT Logo" className="w-full cursor-pointer" />
     </Link>
   );
 };

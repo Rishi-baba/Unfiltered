@@ -11,14 +11,14 @@ const ProjectCard = (props) => {
 
   const getCategoryVideo = (category) => {
     const videoMap = {
-      "Technology": "/videos/v1.mp4",
-      "Sports": "/videos/v2.mp4",
-      "Crime": "/videos/v3.mp4",
-      "Politics": "/videos/v4.mp4",
-      "International": "/videos/v5.mp4",
-      "Entertainment": "/videos/v1.mp4" // fallback
+      "Technology": `${import.meta.env.BASE_URL}videos/v1.mp4`,
+      "Sports": `${import.meta.env.BASE_URL}videos/v2.mp4`,
+      "Crime": `${import.meta.env.BASE_URL}videos/v3.mp4`,
+      "Politics": `${import.meta.env.BASE_URL}videos/v4.mp4`,
+      "International": `${import.meta.env.BASE_URL}videos/v5.mp4`,
+      "Entertainment": `${import.meta.env.BASE_URL}videos/v1.mp4` // fallback
     };
-    return videoMap[category] || "/videos/v1.mp4";
+    return videoMap[category] || `${import.meta.env.BASE_URL}videos/v1.mp4`;
   };
 
   return (
