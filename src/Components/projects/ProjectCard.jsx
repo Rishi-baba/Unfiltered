@@ -31,7 +31,7 @@ const ProjectCard = (props) => {
           <source src={getCategoryVideo(props.text1)} type="video/mp4" />
         </video>
         <div className="opacity-0 transition-opacity group-hover:opacity-100 absolute inset-0 flex items-center justify-center bg-black/30">
-          <h2 className="uppercase text-sm md:text-lg font-[font1] border px-3 py-1 text-white border-white rounded-full">
+          <h2 className="uppercase text-sm md:text-2xl font-[font1] border px-4 py-2 text-white border-white rounded-full">
             {props.text1}
           </h2>
         </div>
@@ -45,7 +45,7 @@ const ProjectCard = (props) => {
           <source src={getCategoryVideo(props.text2)} type="video/mp4" />
         </video>
         <div className="opacity-0 transition-opacity group-hover:opacity-100 absolute inset-0 flex items-center justify-center bg-black/30">
-          <h2 className="uppercase text-sm md:text-lg font-[font1] border px-3 py-1 text-white border-white rounded-full">
+          <h2 className="uppercase text-sm md:text-2xl font-[font1] border px-4 py-2 text-white border-white rounded-full">
             {props.text2}
           </h2>
         </div>

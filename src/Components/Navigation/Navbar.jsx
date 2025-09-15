@@ -11,7 +11,7 @@ const Navbar = () => {
 
     return (
         <div className='z-50 flex fixed top-0 w-full items-start justify-between'>
-            <div className='lg:p-5 p-2 '>
+            <div className='lg:p-1 p-0.5' style={{marginTop: '-6vh'}}>
                 <div className='lg:w-36 w-24'>
                     <Logo />
                 </div>

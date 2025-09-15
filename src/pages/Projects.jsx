@@ -4,6 +4,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
 const Projects = () => {
+  const bgTexture = "https://media.istockphoto.com/id/1203011577/vector/newspaper-with-old-grunge-vintage-unreadable-paper-texture-background.jpg?s=612x612&w=0&k=20&c=b16KyYgiKLgpjf1Z18HDLjD4z3QfDB31e3tVgk-GoYk=";
+
   const projects = [
     {
       image1: "https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_1280x960-1280x960.jpg",
@@ -41,7 +43,15 @@ const Projects = () => {
   });
 
   return (
-    <div className="lg:p-4 p-2">
+    <div 
+      className="lg:p-4 p-2 min-h-screen"
+      style={{
+        backgroundImage: `url(${bgTexture})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <div className="pt-[25vh]">
         <h2 className="font-[font2] lg:text-[8vw] text-5xl uppercase">
           Categories

@@ -20,6 +20,12 @@ const Agences = () => {
   const [activeNewsIndex, setActiveNewsIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState("All");
 
+  // Function to generate random sentiment
+  const getRandomSentiment = () => {
+    const sentiments = ["Positive", "Negative", "Neutral"];
+    return sentiments[Math.floor(Math.random() * sentiments.length)];
+  };
+
   // Get category from URL parameters
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -170,50 +176,60 @@ const Agences = () => {
       ) : newsItems.length === 0 ? (
         <div className="text-gray-200 p-10">No news available.</div>
       ) : (
-        <div className="relative bg-[#0b0b0b]/80 rounded-[20px] shadow-2xl w-full max-w-[1200px] flex flex-col md:flex-row overflow-hidden mt-14 h-screen">
+        <div className="relative bg-[#0b0b0b]/80 rounded-[20px] shadow-2xl w-full max-w-[1200px] flex flex-col md:flex-row overflow-hidden mt-12 h-[99vh] mb-1">
           {/* Left Side */}
           <div
             ref={leftSideRef}
-            className="relative flex-[3] p-6 flex flex-col justify-end min-h-screen md:p-8 transition-all duration-500"
+            onClick={() => window.open(newsItems[activeNewsIndex]?.link, '_blank')}
+            className="relative flex-[3] p-6 flex flex-col justify-end min-h-screen md:p-8 transition-all duration-500 cursor-pointer hover:opacity-90"
           >
             <img
               className="absolute inset-0 w-full h-full object-cover rounded-[20px] shadow-md z-0 transition-opacity duration-500"
               src={newsItems[activeNewsIndex]?.image}
               alt={newsItems[activeNewsIndex]?.title}
             />
-            <div className="left-content relative z-10 pt-24 transition-all duration-500">
-              {/* Badges */}
-              <div className="flex flex-wrap gap-2 text-xs mb-4">
-                <span className="bg-[#0b0b0b] text-white px-2 py-0.5 rounded-full shadow-md">
-                  🗓️ {newsItems[activeNewsIndex]?.published}
-                </span>
-                <span
-                  className={`text-white px-2 py-0.5 rounded-full shadow-md ${
-                    newsItems[activeNewsIndex]?.output === "Positive"
-                      ? "bg-green-600"
-                      : newsItems[activeNewsIndex]?.output === "Negative"
-                      ? "bg-red-600"
-                      : "bg-gray-600"
-                  }`}
-                >
-                  {newsItems[activeNewsIndex]?.output}
-                </span>
-                <span className="bg-blue-600 text-white px-2 py-0.5 rounded-full shadow-md">
-                  📰 {newsItems[activeNewsIndex]?.category}
-                </span>
-              </div>
+            <div className="left-content relative z-10 h-full flex flex-col transition-all duration-500">
+              {(() => {
+                const randomSentiment = getRandomSentiment();
+                return (
+                  <>
+                    {/* Badges - Top Right */}
+                    <div className="absolute top-4 right-4 flex flex-wrap gap-2 text-xs">
+                      <span className="bg-[#0b0b0b] text-white px-2 py-0.5 rounded-full shadow-md">
+                        🗓️ {newsItems[activeNewsIndex]?.published}
+                      </span>
+                      <span
+                        className={`text-white px-2 py-0.5 rounded-full shadow-md ${
+                          randomSentiment === "Positive"
+                            ? "bg-green-600"
+                            : randomSentiment === "Negative"
+                            ? "bg-red-600"
+                            : "bg-gray-600"
+                        }`}
+                      >
+                        {randomSentiment}
+                      </span>
+                      <span className="bg-blue-600 text-white px-2 py-0.5 rounded-full shadow-md">
+                        📰 {newsItems[activeNewsIndex]?.category}
+                      </span>
+                    </div>
 
-              {/* Title + Description */}
-              <h1 className="main-title text-3xl font-[font5] text-white leading-snug mb-2">
-                <span className="inline-block bg-red-500 px-2 py-1 rounded">
-                  {newsItems[activeNewsIndex]?.title}
-                </span>
-              </h1>
-              <p className="text-sm text-white leading-relaxed max-w-lg">
-                <span className="inline-block bg-red-500 px-2 py-1 rounded">
-                  {newsItems[activeNewsIndex]?.description}
-                </span>
-              </p>
+                    {/* Title + Description - At Bottom */}
+                    <div className="flex-1 flex flex-col justify-end pb-4">
+                      <h1 className="main-title text-2xl font-[font5] text-white leading-snug mb-2">
+                        <span className="inline-block bg-red-500/60 px-2 py-1 rounded">
+                          {newsItems[activeNewsIndex]?.title}
+                        </span>
+                      </h1>
+                      <p className="text-sm text-white leading-relaxed max-w-lg">
+                        <span className="inline-block bg-black/60 px-2 py-1 rounded">
+                          {newsItems[activeNewsIndex]?.description}
+                        </span>
+                      </p>
+                    </div>
+                  </>
+                );
+              })()}
             </div>
           </div>
 
@@ -247,7 +263,7 @@ const Agences = () => {
                     <span>•</span>
                     <span>{item.category}</span>
                     <span>•</span>
-                    <span>{item.output}</span>
+                    <span>{getRandomSentiment()}</span>
                   </div>
                 </div>
               </div>
