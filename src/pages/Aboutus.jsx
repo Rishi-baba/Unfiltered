@@ -18,7 +18,7 @@ const teamMembers = [
   },
   {
     name: 'Vedant',
-    role: 'Frontend Developer',
+    role: 'UI/UX Designer',
     description: 'A versatile developer with a keen eye for design, he meticulously crafted the HTML, CSS, and JavaScript, and handled the website\'s seamless deployment.',
     avatar: `${import.meta.env.BASE_URL}images/vadent.jpg`,
     github: '#',
@@ -26,8 +26,8 @@ const teamMembers = [
   },
   {
     name: 'Anmol',
-    role: '',
-    description: 'He engineered the robust backend, building the authentication forms and meticulously preparing the project\'s presentation and documentation.',
+    role: 'Frontend Developer',
+    description: 'He designed the sleek frontend, crafting intuitive authentication forms and meticulously preparing the project’s presentation and documentation.',
     avatar: `${import.meta.env.BASE_URL}images/anmol.jpeg`,
     github: '#',
     linkedin: '#',
