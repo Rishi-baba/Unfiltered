@@ -26,7 +26,7 @@ const teamMembers = [
   },
   {
     name: 'Anmol',
-    role: 'Backend Developer',
+    role: '',
     description: 'He engineered the robust backend, building the authentication forms and meticulously preparing the project\'s presentation and documentation.',
     avatar: `${import.meta.env.BASE_URL}images/anmol.jpeg`,
     github: '#',

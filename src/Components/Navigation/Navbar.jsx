@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from 'react'
-import { NavbarColorContext, NavbarContext } from '../../context/NavContext'
+import { NavbarColorContext, NavbarContext, LoginContext } from '../../context/NavContext'
 import { Link } from 'react-router-dom'
 import Logo from '../common/Logo'
 
@@ -9,6 +9,7 @@ const Navbar = () => {
     const loginGreenRef = useRef(null)
     const [navOpen,setNavOpen] = useContext(NavbarContext)
     const [navColor, setNavColor] = useContext(NavbarColorContext)
+    const [isLoggedIn, setIsLoggedIn] = useContext(LoginContext)
 
     return (
         <div className='z-50 fixed top-0 w-full'>
@@ -36,21 +37,23 @@ const Navbar = () => {
                         </div>
                     </div>
                     
-                    {/* Login Button */}
-                    <Link to="/login" className='block'>
-                        <div onMouseEnter={() => {
-                            loginGreenRef.current.style.height = '100%'
-                        }}
-                            onMouseLeave={() => {
-                                loginGreenRef.current.style.height = '0%'
+                    {/* Login Button - Only show if not logged in */}
+                    {!isLoggedIn && (
+                        <Link to="/login" className='block'>
+                            <div onMouseEnter={() => {
+                                loginGreenRef.current.style.height = '100%'
                             }}
-                            className='lg:h-12 h-8 bg-black relative lg:w-[16vw] w-48 cursor-pointer'>
-                            <div ref={loginGreenRef} className='bg-[#FF0000] transition-all absolute top-0 h-0 w-full'></div>
-                            <div className='relative h-full lg:px-12 px-8 flex flex-col justify-center items-center'>
-                                <div className="text-white lg:text-sm text-xs font-bold">LOGIN</div>
+                                onMouseLeave={() => {
+                                    loginGreenRef.current.style.height = '0%'
+                                }}
+                                className='lg:h-12 h-8 bg-black relative lg:w-[16vw] w-48 cursor-pointer'>
+                                <div ref={loginGreenRef} className='bg-[#FF0000] transition-all absolute top-0 h-0 w-full'></div>
+                                <div className='relative h-full lg:px-12 px-8 flex flex-col justify-center items-center'>
+                                    <div className="text-white lg:text-sm text-xs font-bold">LOGIN</div>
+                                </div>
                             </div>
-                        </div>
-                    </Link>
+                        </Link>
+                    )}
                 </div>
             </div>
         </div>

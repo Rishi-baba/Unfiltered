@@ -1,12 +1,14 @@
 // Login.jsx
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { LoginContext } from "../context/NavContext";
 import "boxicons/css/boxicons.min.css";
 import "./LoginStyle.css";
 
 const Login = () => {
   const [isActive, setIsActive] = useState(false);
   const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useContext(LoginContext);
 
   const handleRegisterClick = (e) => {
     e.preventDefault();
@@ -20,13 +22,15 @@ const Login = () => {
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
-    // Simple redirect to main page after login
+    // Set user as logged in and redirect to main page
+    setIsLoggedIn(true);
     navigate("/");
   };
 
   const handleRegisterSubmit = (e) => {
     e.preventDefault();
-    // Simple redirect to main page after register
+    // Set user as logged in and redirect to main page
+    setIsLoggedIn(true);
     navigate("/");
   };
 

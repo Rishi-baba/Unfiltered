@@ -85,7 +85,7 @@ const FullScreenNav = () => {
       </div>
       <div ref={fullNavLinksRef} className="relative">
         <div className="navlink flex w-full justify-between lg:p-5 p-2 items-start">
-          <div className="">
+          <div className="" style={{marginTop: '-5vh'}}>
             <div className="lg:w-40 w-30">
               <Logo onClick={() => setNavOpen(false)} />
             </div>
